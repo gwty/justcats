@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     <script src= "js/jquery-3.2.0.min.js"></script>
     <script src= "js/jquery.form.js"></script>
     <script src= "js/gameelements.js"></script>
@@ -6,10 +7,16 @@
     session_start();
 require('credentials.php'); 
 
+=======
+<?php 
+session_start();
+require('credentials.php'); 
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
 $conn = new mysqli($servername, $dbusername, $password, $dbname);
 getusers($conn);
 
 function getusers ($conn) {
+<<<<<<< HEAD
 $getsql = "SELECT id,username,name,company,picture from users where id <>".$_SESSION["id"]; 
 
 ?>
@@ -108,10 +115,35 @@ echo "<tr>";
  
             
         <?php
+=======
+$getsql = "SELECT id,username,email from users where id <>".$_SESSION["id"];  
+$result = $conn->query($getsql);
+if($result->num_rows>0) {
+while($row = $result->fetch_assoc()) {
+
+        echo "<form action = 'php/addfriend.php' method='post'><h1>";
+        $selectsql = "SELECT id from messages where fromuser = ".$_SESSION["id"]." and touser = ".$row["id"];
+        $result2 = $conn->query($selectsql);
+                $selectsql2 = "SELECT id from messages where touser = ".$_SESSION["id"]." and fromuser = ".$row["id"];
+        $result3 = $conn->query($selectsql2);
+        
+//         // if did not send/receive FR
+//         if ($result2->num_rows==0 && $result3->num_rows==0) 
+        $sendfr = "<br><button class='btn btn-lg' name='addfriend' value=" .$row["id"].">See Profile</button>";
+// ==
+        
+        echo $row['username']. $sendfr . " <button class='btn btn-lg' name='message' value=" .$row["id"]. " >say Hi</button>";
+        echo "</form>";
+    }
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
     
 }
 $conn->close();
 }
+<<<<<<< HEAD
 ?>
 </table>
 
+=======
+?>
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c

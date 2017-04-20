@@ -15,11 +15,18 @@ $result = $conn->query($fromuser);
 $result2 = $conn->query($friends);
 if($result->num_rows>0) {
 while($row = $result->fetch_assoc()) {
+<<<<<<< HEAD
         $getsql = "SELECT  id, username from users where id=".$row['fromuser'];  
         $result3 = $conn->query($getsql);
         $row2 = $result3->fetch_assoc();
         echo "Friend Request<br>";
         echo "<b>".$row2['username']."</b> wants to be friends with you."."<form action='php/friendrequests.php' method='post'><button  name='acceptfr' value=".$row2['id']."><img src='img/buttons/accept.png' width='100px'/></button><button name='declinefr'  value=".$row2['id']."><img src='img/buttons/ignore.png' width='100px'/></button></form>";
+=======
+        $getsql = "SELECT id, username from users where id=".$row['fromuser'];  
+        $result3 = $conn->query($getsql);
+        $row2 = $result3->fetch_assoc();
+        echo "<b>".$row2['username']."</b> wants to be friends with you."."<form action='php/friendrequests.php' method='post'><button name='acceptfr' value=".$row2['id'].">Accept</button><button name='declinefr' value=".$row2['id'].">Decline</button></form>";
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
     }
 }
 

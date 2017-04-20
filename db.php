@@ -3,6 +3,7 @@ session_start();
 require_once('php/credentials.php');
 
 $username2 = $_POST["Username"];
+<<<<<<< HEAD
 if($_POST["Name"])
 $name = $_POST["Name"];
 else
@@ -23,6 +24,13 @@ if($_POST["Summary"])
 $summary = $_POST["Summary"];
 else
 $summary= "not set";
+=======
+$name = $_POST["Name"];
+$email = $_POST["Email"];
+$company = $_POST["Company"];
+$position = $_POST["Title"];
+$summary = $_POST["Summary"];
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
 // Create connection
 $conn = new mysqli($servername, $dbusername, $password, $dbname);
 

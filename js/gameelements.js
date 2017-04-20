@@ -23,6 +23,7 @@
     
     function closebutton(element) {
      document.write(" <button class='close2' onclick='closepage("+element+")>Close</button>");
+<<<<<<< HEAD
     }
     function openpage(element) {
     el = document.getElementById(element);
@@ -34,3 +35,6 @@
       console.log ("element not found");
     }
 }
+=======
+    }
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c

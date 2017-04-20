@@ -43,9 +43,12 @@ function getProfileData() {
     
     if(exists("Company"))
     document.getElementById("Company").value =  company;
+<<<<<<< HEAD
     
         if(exists("Company2"))
     document.getElementById("Company2").value =  company;
+=======
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
     if(exists("Title"))
     document.getElementById("Title").value =  position;
     if(exists("Summary"))
@@ -54,11 +57,14 @@ function getProfileData() {
     document.getElementById("Email").value =  emailAddress;
     if(exists("Name"))
     document.getElementById("Name").value =  firstName + " " + lastName;
+<<<<<<< HEAD
     
         if(exists("Name2"))
     document.getElementById("Name2").value =  firstName + " " + lastName;
     
     
+=======
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
     if(exists("picture"))
     document.getElementById("picture").src =  pictureUrl;
   });

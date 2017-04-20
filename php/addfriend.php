@@ -1,7 +1,11 @@
+<<<<<<< HEAD
     <script src= "../js/gameelements.js"></script>
     <link href="../css/game.css" rel="stylesheet" />
     
     <?php 
+=======
+<?php 
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
 session_start();
 print_r($_SESSION);
 require_once('credentials.php');
@@ -15,6 +19,7 @@ $conn = new mysqli($servername, $dbusername, $password, $dbname);
 $sql = "INSERT INTO messages (fromuser, touser,type)
 VALUES (".$_SESSION["id"].",".$_POST['addfriend'].",0)";
 $result = $conn->query($sql);
+<<<<<<< HEAD
 
 
 
@@ -24,6 +29,11 @@ $conn->close();
 ?>
 <script>closepage("messages");</script>
 <?php
+=======
+$conn->close();
+// echo $sql;
+header( 'Location: ../game.html');
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
 }
 
 if(isset($_POST['message']) && isset($_SESSION['id'])) {

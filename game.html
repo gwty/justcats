@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
   <head>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -120,4 +121,105 @@ This is a shop. You have this, this and this.
 </script>
 
 </body>
+=======
+<html>
+  <head>
+
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 773d3aa95bfjl2
+    authorize: true
+    onLoad: onLinkedInLoad
+</script>
+
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/gameelements.js"></script>
+    <title>Justcats</title>
+    <script src= "js/jquery-3.2.0.min.js"></script>
+    <link href="css/game.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/game.js"></script>
+
+</head>
+
+<body>
+<!-- Game Area -->
+<div id = "gameDiv">
+    
+<div id="profile" class="overlay">
+<button class="close2" onclick="closepage('profile')">Close</button>
+        <h1>Profile</h1>
+        <img id="picture"></img>
+        <h2>Name:</h2><h3 id="Name"></h3>
+        <h2>Company:</h2><h3 id="Company"></h3>
+        <h2>Position:</h2><h3 id="Title"></h3>
+        <br><br>
+</div>
+    
+<div id="mycat" class="bottomoverlay">
+    <button class="close2" onclick="closepage('mycat')">Close</button>
+        <img id="currentcat" width="64px" height="64px" />
+        <h2>Hunger: <p id="hunger"></p>
+        <h2>Education: <p id="education"></p>
+        <h2>Health: <p id="health"></p>
+        </h2>
+</div>
+    
+<div id="feed">
+        <button class="close2" onclick="closepage('feed')">Close</button>
+        <img id="selectedcat" width="64px" height="64px" />
+        <h2>Hunger: <p id="feedhunger"></p>
+        </h2>
+</div>
+    
+<div id="trickseducation" class="overlay">
+     <button class="close2" onclick="closepage('tricks')">Close</button>
+      <img id="selectedcat2" width="64px" height="64px" />
+</div>
+
+
+
+<div id="usersearch" class="overlay">
+    <button class="close2" onclick="closepage('usersearch')">Close</button>
+    <br>
+    <input name="findpeople"  class="form-control" size="20" placeholder="Find people by name, company, position">
+         <div style="display: inline-block; float: right; margin-top: 3px; margin-left: 5px;">
+                            <span class="glyphicon glyphicon-filter" style="font-size: 18px;"></span>
+                        </div></input>
+                        
+<?php require("php/getusers.php");?> 
+
+</div>
+    <div id="messages" class="overlay">
+    <button class="close2" onclick="closepage('messages')">Close</button>
+    <h1> Notifications </h1>
+    <hr>
+    <?php require("php/showrequests.php");?>  
+</div>
+    
+<div id="shop" class="overlay">
+<button class="close2" onclick="closepage('shop')">Close</button>
+This is a shop. You have this, this and this.
+</div>
+    
+<div id="customize" class="overlay">
+<button class="close2" onclick="closepage('customize')">Close</button>
+<img id="selectedcat3" width="64px" height="64px" />
+</div>
+    
+    
+<div id="friendslist" class="overlay">
+     <button class="close2" onclick="closepage('friendslist')">Close</button>
+        <h1>Friends List:</h1>
+        <hr>
+        <?php require("php/getfriends.php");?> 
+    </div>
+ 
+</div>
+ 
+
+</body>
+>>>>>>> 03f0905f8bce38b69adae491af2a0dcd2ce6bf6c
 </html>
