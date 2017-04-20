@@ -1,0 +1,123 @@
+<html>
+  <head>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<script src= "js/jquery-3.2.0.min.js"></script>
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 773d3aa95bfjl2
+    authorize: true
+    onLoad: onLinkedInLoad
+</script>
+
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/gameelements.js"></script>
+    <title>Cat Cow</title>
+    <meta content="">
+    <link href="css/game.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/game.js"></script>
+</head>
+
+<body>
+<!-- Game Area -->
+<div id = "gameDiv">
+    
+<div id="profile" class="overlay">
+closebutton("profile");
+        <h1>Profile</h1>
+        <img id="picture"></img>
+        <h2>Name:</h2><h3 id="Name"></h3>
+        <h2>Company:</h2><h3 id="Company"></h3>
+        <h2>Position:</h2><h3 id="Title"></h3>
+        <br><br>
+    </div>
+    
+    <div id="mycat" class="bottomoverlay">
+    <button class="close2" onclick="closepage('mycat')">Close</button>
+        <img id="currentcat" width="64px" height="64px" />
+        <h2>Hunger: <p id="hunger"></p>
+        <h2>Education: <p id="education"></p>
+        <h2>Health: <p id="health"></p>
+        </h2>
+    </div>
+    
+        <div id="feed">
+        <button class="close2" onclick="closepage('feed')">Close</button>
+        <img id="selectedcat" width="64px" height="64px" />
+        <h1>
+        Available Food:<br>
+        Fish <button class="btn" onclick="feedcat()">Feed</button><br>
+        Tuna<br>
+        </p>
+        <h2>Hunger: <p id="feedhunger"></p>
+        </h2>
+    </div>
+    
+     <div id="tricks" class="overlay">
+     <button class="close2" onclick="closepage('tricks')">Close</button>
+        <img id="selectedcat2" width="64px" height="64px" />
+        <h1>
+        Available Tricks:<br>
+        Rollover<br>
+        Belly Flop<br>
+        </p>
+        <h2>Education: <p id="trickseducation"></p>
+        </h2>
+    </div>
+    <div id="usersearch" class="overlay">
+    <button class="close2" onclick="closepage('usersearch')">Close</button>
+    <h1> Users </h1>
+<?php require("php/getusers.php");?> 
+
+    </div>
+     <div id="messages" class="overlay">
+     <button class="close2" onclick="closepage('messages')">Close</button>
+    <h1> Notifications </h1>
+    <hr>
+    <?php require("php/showrequests.php");?>  
+      
+
+    </div>
+    
+    
+    <div id= "selectacat" class="overlay">
+    <button class="close2" onclick="closepage('selectacat')">Close</button>
+    Select a Cat and play with him/her.
+    </div>
+        <div id="shop" class="overlay">
+        <button class="close2" onclick="closepage('shop')">Close</button>
+    <h1> Shop </h1>
+    <h2><ul>
+    <li>Fish</li>
+    <li>Chips</li>
+    <li>Flowers</li>
+    </ul>
+    </h2>
+    </div>
+    
+         <div id="customize" class="overlay">
+         <button class="close2" onclick="closepage('customize')">Close</button>
+        <img id="selectedcat3" width="64px" height="64px" />
+        <h1>
+        Customizations:<br>
+        Add Earrings<br>
+        </p>
+        <h2>Education: <p id="trickseducation"></p>
+        </h2>
+    </div>
+    
+    
+     <div id="friendslist" class="overlay">
+     <button class="close2" onclick="closepage('friendslist')">Close</button>
+        <h1>Friends List:</h1>
+        <hr>
+        <?php require("php/getfriends.php");?> 
+    </div>
+    
+    </div>
+ 
+
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <meta name="google-signin-client_id" content="xxxxxxxxxxxxxx.apps.googleusercontent.com" />
+<meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<meta name="google-signin-callback" content="signinCallback" />
+<meta name="google-signin-scope" content="https://www.googleapis.com/auth/games" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://apis.google.com/js/client.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="344234306400-fspubjljm6pq8d2d1r6rfdn1bctr4u3c.apps.googleusercontent.com">
+<script src= "jquery-3.2.0.min.js"></script>
+
+<script>
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  
+  document.getElementById("Name").value =  profile.getName();
+}
+
+</script>
+
+
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 773d3aa95bfjl2
+    authorize: true
+    onLoad: onLinkedInLoad
+</script>
+
+<script type="text/javascript">
+    function liAuth(){
+        IN.User.authorize(function(){
+        });
+    }
+    // Setup an event listener to make an API call once auth is complete
+    function onLinkedInLoad() {
+        IN.Event.on(IN, "auth", getProfileData);
+    }
+
+    // Handle the successful return from the API call
+// Handle the successful return from the API call
+function onSuccess(data) {
+    console.log(data);      
+}
+
+// Handle an error response from the API call
+function onError(error) {
+    console.log(error);
+}
+
+    // Handle an error response from the API call
+    function onError(error) {
+        console.log(error);
+    }
+
+    // Use the API call wrapper to request the member's basic profile data
+    function getProfileData() {
+IN.API.Profile("me").fields("id,firstName,lastName,email-address,summary,picture-urls::(original),public-profile-url,location:(name),positions:(is-current,company:(name),title)").result(function (me) {
+            var profile = me.values[0];
+            var id = profile.id;
+            var firstName = profile.firstName;
+            var lastName = profile.lastName;
+            var emailAddress = profile.emailAddress;
+            var pictureUrl = profile.pictureUrls.values[0];
+            var profileUrl = profile.publicProfileUrl;
+            var country = profile.location.name;
+            var company = profile.positions.values[0].company.name;
+            var position = profile.positions.values[0].title;
+            var summary = profile.summary;
+            
+            document.getElementById("Company").value =  company;
+            document.getElementById("Title").value =  position;
+            if(summary)
+            document.getElementById("Summary").value =  summary;
+        });
+//         IN.API.Raw("/people/~").result(onSuccess).error(onError);
+    }
+
+
+</script>
+
+    <style>
+    
+    .g-signin2 
+    {
+    width:500px;
+    height:100px;
+    }
+     .bigfont 
+    {
+    font-size:40px;
+    height:50px;
+    }   
+     .abcRioButton
+    {
+    width:500px !important;
+    height:100px !important;
+    border: solid 3px #ddd !important;
+    }
+    
+         .abcRioButtonContents
+    {
+    margin-top:40px !important;
+    font-size:40px !important;
+    line-height: 100px !important;
+    
+    }
+    
+    .abcRioButtonIconImage svg
+    {
+    width:100px !important;
+    height:90px;
+/*     box-shadow: 3px 3px #ddd !important; */
+    }
+    
+    .linkedinsignin img
+    {
+    width:500px;
+    }
+    
+    
+    body {
+    background-color: #eee;
+    }
+    .gametitle {
+    background-color:#333;
+    box-shadow: #444 1px 1px;
+    color:white;
+    top:0;
+    font-size:70px;
+    }
+    
+        .playtitle {
+    background-color:green;
+    box-shadow: #444 1px 1px;
+    color:white;
+    bottom:0px;
+    font-size:70px;
+    }
+    </style>
+    <script>
+handleAuthResult = function(auth) {
+  if (auth && auth.error == null) {
+    // Hooray! The user is logged int!
+    // If we got here from a sign-in button, we should probably hide it
+    hideMyGamesSignInButton();
+    loadLeaderboardsAndAchievements();
+  } else {
+    // Common reasons are immediate_failed and user_signed_out
+    if (auth && auth.hasOwnProperty('error')) {
+      console.log('Sign in failed because: ', auth.error);
+    }
+    showMyGamesSignInButton();
+  }
+};
+
+gapi.client.load('games','v1',function(response) {
+        // Ready to make calls!
+      });
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+  </head>
+  <body>
+  
+
+<!--   <a href="#" onclick="signOut();">Sign out</a> -->
+<div class="gametitle">
+<center>Justcats</center>
+</div>
+<div class="container">
+<h1>(Required) sign-in with your Google ID below</h1>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<!-- <a href=""><img onclick="liAuth()" src="linkedinsignin.png"></a> -->
+<h1>(Optional) sign-in with your LinkedIn ID below</h1>
+<div onclick="liAuth()" class="linkedinsignin">
+<a href="#" ><img src="linkedinsignin.png"></a>
+</div>
+<h1> Your Profile </h1>
+<div class= "col-sm-12 col-md-12 col-lg-12">
+ <label for="Name" class="col-6 col-form-label"><h1>Name</h1></label>
+ <div class="col-2">
+ <input class="form-control col-6  bigfont" type="textfield" id="Name"></input>
+ </div>
+<label for="Company" class="col-3 col-form-label"><h1>Company</h1></label><input class="form-control  bigfont" type="textfield" id="Company"></input>
+</div>
+<div class= "col-sm-12 col-md-12 col-lg-12">
+<label for="Title" class="col-6 col-form-label"><h1>Job Title</h1></label><input class="form-control  bigfont" type="textfield" id="Title"></input>
+<label for="Summary" class="col-6 col-form-label"><h1>Summary</h1></label><textarea class="form-control  bigfont" rows="5" id="Summary"></textarea>
+</div>
+</div>
+<a href = "game.html">
+<div class="playtitle">
+<center>
+Play!
+</center>
+</div>
+ </a>
+  </body>
+</html>

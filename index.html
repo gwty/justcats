@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<script src= "js/jquery-3.2.0.min.js"></script>
+<link href="css/game.css" rel="stylesheet" />
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key: 773d3aa95bfjl2
+    authorize: true
+    onLoad: onLinkedInLoad
+</script>
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+<body> 
+<div class="gametitle">
+Justcats
+<button class="titlebutton"><a href="http://www.incontextdesign.com/womenintech/"><h1>About</h1></a></button>
+<button class="titlebutton"><a href="team.html"><h1>Team</h1></a></button>
+</div>
+<div class="container">
+<form action="db.php" method="post">
+
+<div class= "col-sm-12 col-md-12 col-lg-12">
+<h1> Log In </h1>
+<hr>
+ <label for="username" class="col-6 col-form-label"><h1>Username (set this)(Required)</h1></label>
+ <input class="form-control col-6  bigfont" type="textfield" id="Username" name="Username" required></input>
+ </div>
+ <div class= "col-sm-12 col-md-12 col-lg-12">
+ <label for="username" class="col-6 col-form-label"><h1>E-mail</h1></label>
+ <input class="form-control col-6  bigfont" type="textfield" id="Email" name="Email"></input>
+ </div>
+<div class= "col-sm-12 col-md-12 col-lg-12">
+ <label for="Name" class="col-6 col-form-label"><h1>Name</h1></label>
+ <div class="col-2">
+ <input class="form-control col-6  bigfont" type="textfield" id="Name"></input>
+ </div>
+<label for="Company" class="col-3 col-form-label"><h1>Company</h1></label><input class="form-control  bigfont" type="textfield" id="Company" name="Company"></input>
+</div>
+<div class= "col-sm-12 col-md-12 col-lg-12">
+<label for="Title" class="col-6 col-form-label"><h1>Job Title</h1></label><input class="form-control  bigfont" type="textfield" id="Title" name="Title"></input>
+<label for="Summary" class="col-6 col-form-label"><h1>Summary</h1></label><textarea class="form-control  bigfont" rows="2" id="Summary" name="Summary"></textarea>
+</div>
+</div>
+<center>
+<h1>Populate this with your LinkedIn ID below</h1>
+<div onclick="liAuth()" class="linkedinsignin">
+<a href="#" ><img src="linkedinsignin.png"></a>
+</div>
+</center>
+<br>
+<hr>
+<center>
+<input type="submit" value="Play!" class="playtitle"></input>
+</center>
+</form>
+  </body>
+</html>
